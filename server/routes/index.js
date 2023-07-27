@@ -13,6 +13,7 @@ const commonRequestWrapper = require('../infrastructure/common-request-wrapper')
 
 // To confirm setup only.
 router.get('/api/products', authMiddleware, commonRequestWrapper(productsController.listProducts));
+router.get('/api/products/:id', authMiddleware, commonRequestWrapper(productsController.getProduct));
 router.post('/api/products', authMiddleware, commonRequestWrapper(productsController.addProduct));
 router.patch('/api/products/:id', authMiddleware, commonRequestWrapper(productsController.updateProduct));
 router.delete('/api/products/:id', authMiddleware, commonRequestWrapper(productsController.deleteProduct));

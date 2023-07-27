@@ -1,4 +1,4 @@
-const { listProductsHandler, searchProductsHandler } = require('../queries')
+const { getProductHandler, listProductsHandler, searchProductsHandler } = require('../queries')
 const { addProductHandler, updateProductHandler, deleteProductHandler } = require('../commands');
 const { BusinessException } = require('../exceptions/custom-exceptions');
 
@@ -7,6 +7,12 @@ module.exports = {
         const filter = { status: req.query.status }
         var products = await listProductsHandler(filter);
         return res.status(200).send(products);
+    },
+
+    getProduct: async (req, res) => {
+        var product = await getProductHandler(req.params.id);
+
+        return res.status(200).send(product);
     },
 
     addProduct: async (req, res) => {
