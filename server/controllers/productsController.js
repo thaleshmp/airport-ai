@@ -11,7 +11,7 @@ module.exports = {
     addProduct: async (req, res) => {
         const product = {
             description: req.body.description,
-            airportId: req.body.airportId,
+            airportId: req.user.airportId,
             location: req.body.location,
             foundBy: req.body.foundBy,
             additionalInfo: req.body.additionalInfo,
@@ -30,7 +30,7 @@ module.exports = {
 
         const updateData = {
             description: req.body.description,
-            airportId: req.body.airportId,
+            airportId: req.user.airportId,
             location: req.body.location,
             foundBy: req.body.foundBy,
             additionalInfo: req.body.additionalInfo,
