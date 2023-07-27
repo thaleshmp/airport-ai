@@ -1,11 +1,12 @@
+const { NotFoundException } = require('../../exceptions/custom-exceptions');
 const Product = require('../../models/product')
 
-module.exports = (id) => new Promise((res, rej) => {
-    Product.findById(id, (err, document) => {
-        if (err) {
-            return rej(err);
-        }
+module.exports = async (id) => {
+    var product = await Product.findById(id);
 
-        return res(document);
-    })
-})
+    if (!product) {
+        throw new NotFoundException({ message: 'Product not found', code: 'NOT_FOUND' })
+    }
+
+    return product;
+}

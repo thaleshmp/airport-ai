@@ -18,7 +18,15 @@ class NotFoundException extends BaseException {
     }
 }
 
+class UnauthorizedException extends BaseException {
+    constructor(error){
+        super();
+        this.errors = [ error ]
+    }
+}
+
 module.exports = {
     BusinessException,
-    NotFoundException
+    NotFoundException,
+    UnauthorizedException
 }

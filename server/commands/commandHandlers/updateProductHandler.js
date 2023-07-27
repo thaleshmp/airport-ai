@@ -1,3 +1,4 @@
+const { NotFoundException } = require('../../exceptions/custom-exceptions');
 const Product = require('../../models/product')
 
 module.exports = async (id, product) => {
@@ -7,7 +8,7 @@ module.exports = async (id, product) => {
     });
 
     if (!updatedEntity) {
-        throw { error: 'Product not found', code: 'NOT_FOUND' }
+        throw new NotFoundException({ message: 'Product not found', code: 'NOT_FOUND' })
     }
 
     return updatedEntity;
