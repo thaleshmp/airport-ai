@@ -16,6 +16,8 @@ require('./server/setup/mongoose')();
 
 // Set up routes.
 app.use('/', require('./server/routes'));
+
+// Register exception handlers
 app.use(exceptionMiddleware);
 
 // Start app.

@@ -37,9 +37,6 @@ function setup() {
 
   return connectToDb().then(function() {
 
-    // Set up all models.
-    require('../models');
-    return;
   });
 };
 

@@ -51,7 +51,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/products",
+					"raw": "localhost:3000/api/products?status=pending",
 					"host": [
 						"localhost"
 					],
@@ -63,8 +63,7 @@
 					"query": [
 						{
 							"key": "status",
-							"value": "completed",
-							"disabled": true
+							"value": "pending"
 						}
 					]
 				}
@@ -77,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/products/64c061998cb0b73f20d75cde",
+					"raw": "localhost:3000/api/products/64c2f642ddebd14209b31eaf",
 					"host": [
 						"localhost"
 					],
@@ -85,7 +84,7 @@
 					"path": [
 						"api",
 						"products",
-						"64c061998cb0b73f20d75cde"
+						"64c2f642ddebd14209b31eaf"
 					]
 				}
 			},
@@ -133,7 +132,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"{{$randomLoremSentence}}\",\n    \"airportId\": \"64c01ad9c8bcccca664f79eb\",\n    \"location\": \"{{$randomWord}}\",\n    \"foundBy\": \"{{$randomFirstName}}\",\n    \"additionalInfo\": \"{{$randomLoremSentence}}\",\n    \"lostDate\": \"2023-07-27T23:58:17\",\n    \"features\": [\n        { \"key\": \"category\", \"value\": \"phone\" },\n        { \"key\": \"brand\", \"value\": \"apple\" },\n        { \"key\": \"model\", \"value\": \"iphone 14 pro\" },\n        { \"key\": \"color\", \"value\": \"white\" }\n    ]\n}",
+					"raw": "{\n    \"description\": \"{{$randomLoremSentence}}\",\n    \"airportId\": \"64c01ad9c8bcccca664f79eb\",\n    \"location\": \"{{$randomWord}}\",\n    \"foundBy\": \"{{$randomFirstName}}\",\n    \"ownerInfo\": {\n        \"name\": \"{{$randomFirstName}}\",\n        \"phoneNumber\": \"{{$randomPhoneNumber}}\",\n        \"email\": \"{{$randomEmail}}\"\n    },\n    \"lostDate\": \"2023-07-27T23:58:17\",\n    \"features\": [\n        { \"key\": \"category\", \"value\": \"phone\" },\n        { \"key\": \"brand\", \"value\": \"apple\" },\n        { \"key\": \"model\", \"value\": \"iphone 14 pro\" },\n        { \"key\": \"color\", \"value\": \"white\" }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -161,7 +160,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"UPDATED: {{$randomLoremSentence}}\",\n    \"airportId\": \"64c01ad9c8bcccca664f79eb\",\n    \"location\": \"UPDATED: {{$randomLoremSentence}}\",\n    \"foundBy\": \"UPDATED: {{$randomFirstName}}\",\n    \"additionalInfo\": \"UPDATED: {{$randomLoremSentence}}\",\n    \"status\": \"completed\",\n    \"lostDate\": \"2023-07-25T23:58:17\",\n    \"features\": [\n        { \"key\": \"category\", \"value\": \"phone\" },\n        { \"key\": \"brand\", \"value\": \"Apple\" }\n    ]\n}",
+					"raw": "{\n    \"description\": \"UPDATED: {{$randomLoremSentence}}\",\n    \"airportId\": \"64c01ad9c8bcccca664f79eb\",\n    \"location\": \"UPDATED: {{$randomLoremSentence}}\",\n    \"foundBy\": \"UPDATED: {{$randomFirstName}}\",\n    \"ownerInfo\": {\n        \"name\": \"UPDATED: {{$randomFirstName}}\",\n        \"phoneNumber\": \"UPDATED: {{$randomPhoneNumber}}\",\n        \"email\": \"UPDATED: {{$randomEmail}}\"\n    },\n    \"status\": \"completed\",\n    \"lostDate\": \"2023-07-25T23:58:17\",\n    \"features\": [\n        {\n            \"key\": \"category\",\n            \"value\": \"phone\"\n        },\n        {\n            \"key\": \"brand\",\n            \"value\": \"Apple\"\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -169,7 +168,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/products/64c061998cb0b73f20d75cde",
+					"raw": "localhost:3000/api/products/64c2f642ddebd14209b31eaf",
 					"host": [
 						"localhost"
 					],
@@ -177,7 +176,7 @@
 					"path": [
 						"api",
 						"products",
-						"64c061998cb0b73f20d75cde"
+						"64c2f642ddebd14209b31eaf"
 					]
 				}
 			},
@@ -189,7 +188,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/products/64c018b237637c49f24e6951",
+					"raw": "localhost:3000/api/products/64c2f642ddebd14209b31eaf",
 					"host": [
 						"localhost"
 					],
@@ -197,7 +196,7 @@
 					"path": [
 						"api",
 						"products",
-						"64c018b237637c49f24e6951"
+						"64c2f642ddebd14209b31eaf"
 					]
 				}
 			},
