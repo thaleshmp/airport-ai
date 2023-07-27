@@ -10,6 +10,9 @@ module.exports = (filter) => new Promise((res, rej) => {
     if (filter.location) {
         query.location = { $regex: new RegExp(filter.location, 'i'), $options: 'i' }
     }
+    if (filter.lostDate) {
+        query.lostDate = { $gt: filter.lostDate } 
+    }
 
     Product.find(query, (err, documents) => {
         if (err) {

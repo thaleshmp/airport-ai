@@ -4,7 +4,10 @@ const { BusinessException } = require('../exceptions/custom-exceptions');
 
 module.exports = {
     listProducts: async (req, res) => {
-        const filter = { status: req.query.status }
+        var filter = {};
+        if (req.query.status) {
+            filter.status = req.query.status
+        }
         var products = await listProductsHandler(filter);
         return res.status(200).send(products);
     },
@@ -62,12 +65,13 @@ module.exports = {
     searchProduct: async (req, res, next) => {
         const term = req.query.term;
         const location = req.query.location;
+        const lostDate = req.query.lostDate;
 
         if (!term) {
             throw new BusinessException({ message: 'Field term is required', code: 'BAD_REQUEST' })
         }
 
-        var filter = { term, location };
+        var filter = { term, location, lostDate };
 
         var products = await searchProductsHandler(filter);
 
