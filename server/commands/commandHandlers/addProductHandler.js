@@ -6,7 +6,7 @@ module.exports = (product) => new Promise((res, rej) => {
         airportId: product.airportId,
         location: product.location,
         foundBy: product.foundBy,
-        additionalInfo: product.additionalInfo,
+        ownerInfo: product.ownerInfo,
         status: 'pending',
         lostDate: product.lostDate,
         features: product.features,

@@ -24,7 +24,7 @@ module.exports = {
             airportId: req.user.airportId,
             location: req.body.location,
             foundBy: req.body.foundBy,
-            additionalInfo: req.body.additionalInfo,
+            ownerInfo: req.body.ownerInfo,
             lostDate: req.body.lostDate,
             features: req.body.features,
             dateCreated: Date.now(),
@@ -43,7 +43,7 @@ module.exports = {
             airportId: req.user.airportId,
             location: req.body.location,
             foundBy: req.body.foundBy,
-            additionalInfo: req.body.additionalInfo,
+            ownerInfo: req.body.ownerInfo,
             lostDate: req.body.lostDate,
             features: req.body.features,
             status: req.body.status
