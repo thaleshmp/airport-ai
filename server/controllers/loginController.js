@@ -1,4 +1,4 @@
-const authenticationService = require('../security/authentication-service')
+const authenticationService = require('../infrastructure/authentication-service')
 
 module.exports = {
     authenticate: async (req, res) => {

@@ -3,6 +3,8 @@
 */
 'use strict';
 
+const exceptionMiddleware = require('./server/infrastructure/exception-middleware');
+
 let app = require('express')();
 const PORT = 3000;
 
@@ -14,6 +16,7 @@ require('./server/setup/mongoose')();
 
 // Set up routes.
 app.use('/', require('./server/routes'));
+app.use(exceptionMiddleware);
 
 // Start app.
 app.listen(PORT, function() {

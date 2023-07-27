@@ -1,5 +1,6 @@
 const { listProductsHandler, searchProductsHandler } = require('../queries')
-const { addProductHandler, updateProductHandler, deleteProductHandler } = require('../commands')
+const { addProductHandler, updateProductHandler, deleteProductHandler } = require('../commands');
+const { BusinessException } = require('../exceptions/custom-exceptions');
 
 module.exports = {
     listProducts: async (req, res) => {
@@ -52,12 +53,12 @@ module.exports = {
         return res.status(200).send();
     },
 
-    searchProduct: async (req, res) => {
+    searchProduct: async (req, res, next) => {
         const term = req.query.term;
         const location = req.query.location;
 
         if (!term) {
-            throw { error: 'Term is required', code: 'BAD_REQUEST' }
+            throw new BusinessException({ message: 'Field term is required', code: 'BAD_REQUEST' })
         }
 
         var filter = { term, location };
